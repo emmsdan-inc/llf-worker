@@ -23,7 +23,7 @@
     "ev": "pnpm worker:dev",
     "worker:build": "node bin/build-worker.mjs",
     "worker:start": "node worker.js",
-    "postinstall": "pnpm db:generate; pnpm run env"
+    "postinstall": "pnpm db:generate;"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
