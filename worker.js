@@ -114,6 +114,7 @@ var callExternalApiHandler = async (job) => {
 var import_render = require("@react-email/render");
 
 // src/services/email/templates/layout/default.tsx
+var import_jsx_runtime = require("react/jsx-runtime");
 var styles = {
   body: {
     margin: 0,
@@ -134,7 +135,7 @@ var styles = {
   },
   topAccent: {
     height: "3px",
-    backgroundColor: "#0f172a"
+    backgroundColor: "#542e66"
     // Solid dark navy/black for authority
   },
   header: {
@@ -143,7 +144,7 @@ var styles = {
   },
   title: {
     margin: 0,
-    color: "#0f172a",
+    color: "#542e66",
     fontSize: "22px",
     fontWeight: 700,
     letterSpacing: "-0.01em",
@@ -153,7 +154,7 @@ var styles = {
     padding: "0 40px 48px",
     lineHeight: 1.6,
     fontSize: "15px",
-    color: "#334155"
+    color: "#242323"
   },
   footer: {
     padding: "32px 40px",
@@ -163,7 +164,7 @@ var styles = {
     borderTop: "1px solid #e2e8f0"
   },
   platformName: {
-    color: "#0f172a",
+    color: "#542e66",
     fontWeight: 600,
     fontSize: "13px",
     marginBottom: "4px",
@@ -171,10 +172,27 @@ var styles = {
   }
 };
 function EmailLayout({ title, previewText, children }) {
-  return /* @__PURE__ */ React.createElement("html", { lang: "en" }, /* @__PURE__ */ React.createElement("head", null, /* @__PURE__ */ React.createElement("meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }), /* @__PURE__ */ React.createElement("meta", { httpEquiv: "Content-Type", content: "text/html; charset=UTF-8" }), previewText && /* @__PURE__ */ React.createElement("div", { style: { display: "none", maxHeight: 0, overflow: "hidden" } }, previewText), /* @__PURE__ */ React.createElement("title", null, title)), /* @__PURE__ */ React.createElement("body", { style: styles.body }, /* @__PURE__ */ React.createElement("table", { role: "presentation", cellPadding: 0, cellSpacing: 0, width: "100%" }, /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement("td", { align: "center" }, /* @__PURE__ */ React.createElement("table", { role: "presentation", style: styles.wrapper, width: "100%" }, /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement("td", { style: styles.topAccent })), /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement("td", { style: styles.header }, /* @__PURE__ */ React.createElement("h1", { style: styles.title }, title))), /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement("td", { style: styles.content }, /* @__PURE__ */ React.createElement("div", { style: { color: "#334155" } }, children))), /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement("td", { style: styles.footer }, /* @__PURE__ */ React.createElement("span", { style: styles.platformName }, "GODDAN SCHOOL OF MATHMATICS PLATFORM"), /* @__PURE__ */ React.createElement("p", { style: { margin: 0, lineHeight: 1.5 } }, "This communication contains important account or course information. Please do not reply directly to this automated message.")))))))));
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("html", { lang: "en", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("head", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("meta", { httpEquiv: "Content-Type", content: "text/html; charset=UTF-8" }),
+      previewText && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { display: "none", maxHeight: 0, overflow: "hidden" }, children: previewText }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("title", { children: title })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("body", { style: styles.body, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("table", { role: "presentation", cellPadding: 0, cellSpacing: 0, width: "100%", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("tr", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", { align: "center", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("table", { role: "presentation", style: styles.wrapper, width: "100%", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("tr", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", { style: styles.topAccent }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("tr", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", { style: styles.header, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", { style: styles.title, children: title }) }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("tr", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", { style: styles.content, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: { color: "#242323" }, children }) }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("tr", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("td", { style: styles.footer, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { style: styles.platformName, children: "Leading Ladies Foundation" }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { style: { margin: 0, lineHeight: 1.5 }, children: "This communication contains important account or course information. Please do not reply directly to this automated message." })
+      ] }) })
+    ] }) }) }) }) })
+  ] });
 }
 
 // src/services/email/templates/assignment-graded.tsx
+var import_jsx_runtime2 = require("react/jsx-runtime");
 function AssignmentGradedTemplate({
   recipientName,
   studentName,
@@ -189,26 +207,92 @@ function AssignmentGradedTemplate({
   const subjectLabel = studentName ? `${studentName}'s` : "Your";
   const passedColor = passed === true ? "#16a34a" : passed === false ? "#dc2626" : "#64748b";
   const passedLabel = passed === true ? "Passed" : passed === false ? "Not passed" : null;
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
     EmailLayout,
     {
       title: "Daily Exercise Graded",
-      previewText: `${subjectLabel} submission for "${assignmentTitle}" has been graded.`
-    },
-    /* @__PURE__ */ React.createElement("p", null, "Hi ", recipientName, ","),
-    /* @__PURE__ */ React.createElement("p", null, studentName ? /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("strong", null, studentName), "'s daily exercise submission for ", /* @__PURE__ */ React.createElement("strong", null, assignmentTitle), " has been graded.") : /* @__PURE__ */ React.createElement(React.Fragment, null, "Your daily exercise submission for ", /* @__PURE__ */ React.createElement("strong", null, assignmentTitle), " has been graded.")),
-    /* @__PURE__ */ React.createElement("ul", null, /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("strong", null, "Class:"), " ", className), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("strong", null, "Score:"), " ", score), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("strong", null, "Percentage:"), " ", scorePercentage), passedLabel ? /* @__PURE__ */ React.createElement("li", { style: { color: passedColor } }, /* @__PURE__ */ React.createElement("strong", null, "Result:"), " ", passedLabel) : null),
-    feedback ? /* @__PURE__ */ React.createElement("div", { style: { background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "6px", padding: "12px 16px", marginTop: "16px" } }, /* @__PURE__ */ React.createElement("strong", null, "Tutor Feedback:"), /* @__PURE__ */ React.createElement("p", { style: { marginTop: "8px", marginBottom: 0 } }, feedback)) : null,
-    actionUrl ? /* @__PURE__ */ React.createElement("p", { style: { marginTop: "16px" } }, /* @__PURE__ */ React.createElement("a", { href: actionUrl, style: { color: "#4f46e5", fontWeight: 600 } }, "View full results")) : null
+      previewText: `${subjectLabel} submission for "${assignmentTitle}" has been graded.`,
+      children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("p", { children: [
+          "Hi ",
+          recipientName,
+          ","
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { children: studentName ? /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: studentName }),
+          "'s daily exercise submission for ",
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: assignmentTitle }),
+          " has been graded."
+        ] }) : /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+          "Your daily exercise submission for ",
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: assignmentTitle }),
+          " has been graded."
+        ] }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("ul", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("li", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: "Class:" }),
+            " ",
+            className
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("li", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: "Score:" }),
+            " ",
+            score
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("li", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: "Percentage:" }),
+            " ",
+            scorePercentage
+          ] }),
+          passedLabel ? /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("li", { style: { color: passedColor }, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: "Result:" }),
+            " ",
+            passedLabel
+          ] }) : null
+        ] }),
+        feedback ? /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { style: { background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "6px", padding: "12px 16px", marginTop: "16px" }, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: "Tutor Feedback:" }),
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { style: { marginTop: "8px", marginBottom: 0 }, children: feedback })
+        ] }) : null,
+        actionUrl ? /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { style: { marginTop: "16px" }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("a", { href: actionUrl, style: { color: "#4f46e5", fontWeight: 600 }, children: "View full results" }) }) : null
+      ]
+    }
   );
 }
 
 // src/services/email/templates/assignment-reminder.tsx
+var import_jsx_runtime3 = require("react/jsx-runtime");
 function AssignmentReminderTemplate({ recipientName, studentName, assignmentTitle, className, dueDate, actionUrl }) {
-  return /* @__PURE__ */ React.createElement(EmailLayout, { title: "Daily Exercise Reminder", previewText: "A new daily exercise is available." }, /* @__PURE__ */ React.createElement("p", null, "Hi ", recipientName, ","), /* @__PURE__ */ React.createElement("p", null, studentName ? `${studentName} has a new daily exercise.` : "A new daily exercise has been created."), /* @__PURE__ */ React.createElement("ul", null, /* @__PURE__ */ React.createElement("li", null, "Daily Exercise: ", assignmentTitle), /* @__PURE__ */ React.createElement("li", null, "Class: ", className), dueDate ? /* @__PURE__ */ React.createElement("li", null, "Due Date: ", dueDate) : null), actionUrl ? /* @__PURE__ */ React.createElement("p", null, "Open daily exercise: ", /* @__PURE__ */ React.createElement("a", { href: actionUrl }, actionUrl)) : null);
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(EmailLayout, { title: "Daily Exercise Reminder", previewText: "A new daily exercise is available.", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("p", { children: [
+      "Hi ",
+      recipientName,
+      ","
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { children: studentName ? `${studentName} has a new daily exercise.` : "A new daily exercise has been created." }),
+    /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("ul", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("li", { children: [
+        "Daily Exercise: ",
+        assignmentTitle
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("li", { children: [
+        "Class: ",
+        className
+      ] }),
+      dueDate ? /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("li", { children: [
+        "Due Date: ",
+        dueDate
+      ] }) : null
+    ] }),
+    actionUrl ? /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("p", { children: [
+      "Open daily exercise: ",
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("a", { href: actionUrl, children: actionUrl })
+    ] }) : null
+  ] });
 }
 
 // src/services/email/templates/assignment-submitted.tsx
+var import_jsx_runtime4 = require("react/jsx-runtime");
 function AssignmentSubmittedTemplate({
   recipientName,
   studentName,
@@ -218,10 +302,43 @@ function AssignmentSubmittedTemplate({
   isLate,
   actionUrl
 }) {
-  return /* @__PURE__ */ React.createElement(EmailLayout, { title: "Daily Exercise Submitted", previewText: `${studentName} has submitted "${assignmentTitle}".` }, /* @__PURE__ */ React.createElement("p", null, "Hi ", recipientName, ","), /* @__PURE__ */ React.createElement("p", null, /* @__PURE__ */ React.createElement("strong", null, studentName), " has submitted a daily exercise and is awaiting your review."), /* @__PURE__ */ React.createElement("ul", null, /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("strong", null, "Daily Exercise:"), " ", assignmentTitle), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("strong", null, "Class:"), " ", className), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("strong", null, "Submitted At:"), " ", submittedAt), isLate ? /* @__PURE__ */ React.createElement("li", { style: { color: "#dc2626" } }, /* @__PURE__ */ React.createElement("strong", null, "Note:"), " This submission was late.") : null), actionUrl ? /* @__PURE__ */ React.createElement("p", null, /* @__PURE__ */ React.createElement("a", { href: actionUrl, style: { color: "#4f46e5", fontWeight: 600 } }, "Review submission")) : null);
+  return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(EmailLayout, { title: "Daily Exercise Submitted", previewText: `${studentName} has submitted "${assignmentTitle}".`, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("p", { children: [
+      "Hi ",
+      recipientName,
+      ","
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("p", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: studentName }),
+      " has submitted a daily exercise and is awaiting your review."
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("ul", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("li", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: "Daily Exercise:" }),
+        " ",
+        assignmentTitle
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("li", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: "Class:" }),
+        " ",
+        className
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("li", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: "Submitted At:" }),
+        " ",
+        submittedAt
+      ] }),
+      isLate ? /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("li", { style: { color: "#dc2626" }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: "Note:" }),
+        " This submission was late."
+      ] }) : null
+    ] }),
+    actionUrl ? /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("a", { href: actionUrl, style: { color: "#4f46e5", fontWeight: 600 }, children: "Review submission" }) }) : null
+  ] });
 }
 
 // src/services/email/templates/billing-reminder.tsx
+var import_jsx_runtime5 = require("react/jsx-runtime");
 function BillingReminderTemplate({
   recipientName,
   studentName,
@@ -232,21 +349,49 @@ function BillingReminderTemplate({
   reminderType
 }) {
   const isFinal = reminderType === "final";
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(
     EmailLayout,
     {
       title: isFinal ? "Final Payment Reminder" : "Payment Reminder",
-      previewText: isFinal ? "Your class access will be locked if payment is not received." : "Your monthly subscription payment is due today."
-    },
-    /* @__PURE__ */ React.createElement("p", null, "Hi ", recipientName, ","),
-    /* @__PURE__ */ React.createElement("p", null, isFinal ? "This is your final reminder before class access is locked for unpaid billing." : "Your monthly subscription payment is due today."),
-    /* @__PURE__ */ React.createElement("ul", null, /* @__PURE__ */ React.createElement("li", null, "Student: ", studentName), /* @__PURE__ */ React.createElement("li", null, "Class: ", className), /* @__PURE__ */ React.createElement("li", null, "Amount Due: ", amount), /* @__PURE__ */ React.createElement("li", null, "Due Date: ", dueDate), /* @__PURE__ */ React.createElement("li", null, "Grace Ends: ", graceEndsAt)),
-    /* @__PURE__ */ React.createElement("p", null, isFinal ? "Please make sure payment is completed before the grace period ends to avoid loss of access to live class links." : "If the automatic debit does not go through today, the 5-day grace window stays open until the date above."),
-    /* @__PURE__ */ React.createElement("p", null, "Thank you for choosing Goddan.")
+      previewText: isFinal ? "Your class access will be locked if payment is not received." : "Your monthly subscription payment is due today.",
+      children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { children: [
+          "Hi ",
+          recipientName,
+          ","
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: isFinal ? "This is your final reminder before class access is locked for unpaid billing." : "Your monthly subscription payment is due today." }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("ul", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("li", { children: [
+            "Student: ",
+            studentName
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("li", { children: [
+            "Class: ",
+            className
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("li", { children: [
+            "Amount Due: ",
+            amount
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("li", { children: [
+            "Due Date: ",
+            dueDate
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("li", { children: [
+            "Grace Ends: ",
+            graceEndsAt
+          ] })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: isFinal ? "Please make sure payment is completed before the grace period ends to avoid loss of access to live class links." : "If the automatic debit does not go through today, the 5-day grace window stays open until the date above." }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: "Thank you for choosing LLF." })
+      ]
+    }
   );
 }
 
 // src/services/email/templates/class-attendance-alert.tsx
+var import_jsx_runtime6 = require("react/jsx-runtime");
 function ClassAttendanceAlertTemplate({
   recipientName,
   studentName,
@@ -255,10 +400,33 @@ function ClassAttendanceAlertTemplate({
   alertType,
   meetingLink
 }) {
-  return /* @__PURE__ */ React.createElement(EmailLayout, { title: "Attendance Alert", previewText: "A student is late and attendance is still missing." }, /* @__PURE__ */ React.createElement("p", null, "Hi ", recipientName, ","), /* @__PURE__ */ React.createElement("p", null, alertType === "late-no-attendance" ? `${studentName} is now 10 minutes late for class and attendance has not been marked as present.` : `${studentName} has an attendance alert.`), /* @__PURE__ */ React.createElement("ul", null, /* @__PURE__ */ React.createElement("li", null, "Class: ", className), /* @__PURE__ */ React.createElement("li", null, "Scheduled time: ", scheduledAt)), meetingLink ? /* @__PURE__ */ React.createElement("p", null, "Join class now: ", /* @__PURE__ */ React.createElement("a", { href: meetingLink }, meetingLink)) : null, /* @__PURE__ */ React.createElement("p", null, "Please check in and join the class immediately if possible."));
+  return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(EmailLayout, { title: "Attendance Alert", previewText: "A student is late and attendance is still missing.", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("p", { children: [
+      "Hi ",
+      recipientName,
+      ","
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { children: alertType === "late-no-attendance" ? `${studentName} is now 10 minutes late for class and attendance has not been marked as present.` : `${studentName} has an attendance alert.` }),
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("ul", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("li", { children: [
+        "Class: ",
+        className
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("li", { children: [
+        "Scheduled time: ",
+        scheduledAt
+      ] })
+    ] }),
+    meetingLink ? /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("p", { children: [
+      "Join class now: ",
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("a", { href: meetingLink, children: meetingLink })
+    ] }) : null,
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { children: "Please check in and join the class immediately if possible." })
+  ] });
 }
 
 // src/services/email/templates/child-profile-added.tsx
+var import_jsx_runtime7 = require("react/jsx-runtime");
 function ChildProfileAddedTemplate({
   parentName,
   childName,
@@ -266,10 +434,37 @@ function ChildProfileAddedTemplate({
   relationship,
   createdAt
 }) {
-  return /* @__PURE__ */ React.createElement(EmailLayout, { title: "Child Profile Added", previewText: "A new child profile was added to your parent account." }, /* @__PURE__ */ React.createElement("p", null, "Hi ", parentName, ","), /* @__PURE__ */ React.createElement("p", null, "A new child profile was added to your account."), /* @__PURE__ */ React.createElement("ul", null, /* @__PURE__ */ React.createElement("li", null, "Child name: ", childName), childEmail ? /* @__PURE__ */ React.createElement("li", null, "Child email: ", childEmail) : null, relationship ? /* @__PURE__ */ React.createElement("li", null, "Relationship/Gender: ", relationship) : null, createdAt ? /* @__PURE__ */ React.createElement("li", null, "Created at: ", createdAt) : null), /* @__PURE__ */ React.createElement("p", null, "If you did not make this change, contact support immediately."));
+  return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(EmailLayout, { title: "Child Profile Added", previewText: "A new child profile was added to your parent account.", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("p", { children: [
+      "Hi ",
+      parentName,
+      ","
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { children: "A new child profile was added to your account." }),
+    /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("ul", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("li", { children: [
+        "Child name: ",
+        childName
+      ] }),
+      childEmail ? /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("li", { children: [
+        "Child email: ",
+        childEmail
+      ] }) : null,
+      relationship ? /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("li", { children: [
+        "Relationship/Gender: ",
+        relationship
+      ] }) : null,
+      createdAt ? /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("li", { children: [
+        "Created at: ",
+        createdAt
+      ] }) : null
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { children: "If you did not make this change, contact support immediately." })
+  ] });
 }
 
 // src/services/email/templates/class-enrollment.tsx
+var import_jsx_runtime8 = require("react/jsx-runtime");
 function ClassEnrollmentTemplate({
   recipientName,
   studentName,
@@ -279,15 +474,72 @@ function ClassEnrollmentTemplate({
   tutorName,
   note
 }) {
-  return /* @__PURE__ */ React.createElement(EmailLayout, { title: "Class Enrollment Update", previewText: "A new enrollment has been recorded." }, /* @__PURE__ */ React.createElement("p", null, "Hi ", recipientName, ","), /* @__PURE__ */ React.createElement("p", null, "A new enrollment has been recorded."), /* @__PURE__ */ React.createElement("ul", null, /* @__PURE__ */ React.createElement("li", null, "Student: ", studentName), /* @__PURE__ */ React.createElement("li", null, "Class: ", className), classVariantName ? /* @__PURE__ */ React.createElement("li", null, "Variant: ", classVariantName) : null, startDate ? /* @__PURE__ */ React.createElement("li", null, "Start Date: ", startDate) : null, tutorName ? /* @__PURE__ */ React.createElement("li", null, "Tutor: ", tutorName) : null), note ? /* @__PURE__ */ React.createElement("p", null, note) : null);
+  return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(EmailLayout, { title: "Class Enrollment Update", previewText: "A new enrollment has been recorded.", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("p", { children: [
+      "Hi ",
+      recipientName,
+      ","
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { children: "A new enrollment has been recorded." }),
+    /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("ul", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("li", { children: [
+        "Student: ",
+        studentName
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("li", { children: [
+        "Class: ",
+        className
+      ] }),
+      classVariantName ? /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("li", { children: [
+        "Variant: ",
+        classVariantName
+      ] }) : null,
+      startDate ? /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("li", { children: [
+        "Start Date: ",
+        startDate
+      ] }) : null,
+      tutorName ? /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("li", { children: [
+        "Tutor: ",
+        tutorName
+      ] }) : null
+    ] }),
+    note ? /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("p", { children: note }) : null
+  ] });
 }
 
 // src/services/email/templates/class-reminder.tsx
+var import_jsx_runtime9 = require("react/jsx-runtime");
 function ClassReminderTemplate({ recipientName, className, startsAt, tutorName, meetingLink }) {
-  return /* @__PURE__ */ React.createElement(EmailLayout, { title: "Class Reminder", previewText: "Your class starts soon." }, /* @__PURE__ */ React.createElement("p", null, "Hi ", recipientName, ","), /* @__PURE__ */ React.createElement("p", null, "This is a reminder for your upcoming class."), /* @__PURE__ */ React.createElement("ul", null, /* @__PURE__ */ React.createElement("li", null, "Class: ", className), /* @__PURE__ */ React.createElement("li", null, "Starts: ", startsAt), tutorName ? /* @__PURE__ */ React.createElement("li", null, "Tutor: ", tutorName) : null), meetingLink ? /* @__PURE__ */ React.createElement("p", null, "Join link: ", /* @__PURE__ */ React.createElement("a", { href: meetingLink }, meetingLink)) : null);
+  return /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)(EmailLayout, { title: "Class Reminder", previewText: "Your class starts soon.", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("p", { children: [
+      "Hi ",
+      recipientName,
+      ","
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("p", { children: "This is a reminder for your upcoming class." }),
+    /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("ul", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("li", { children: [
+        "Class: ",
+        className
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("li", { children: [
+        "Starts: ",
+        startsAt
+      ] }),
+      tutorName ? /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("li", { children: [
+        "Tutor: ",
+        tutorName
+      ] }) : null
+    ] }),
+    meetingLink ? /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("p", { children: [
+      "Join link: ",
+      /* @__PURE__ */ (0, import_jsx_runtime9.jsx)("a", { href: meetingLink, children: meetingLink })
+    ] }) : null
+  ] });
 }
 
 // src/services/email/templates/enrollment-confirmation.tsx
+var import_jsx_runtime10 = require("react/jsx-runtime");
 function EnrollmentConfirmationTemplate({
   parentName,
   studentName,
@@ -297,30 +549,102 @@ function EnrollmentConfirmationTemplate({
   tutorName,
   actionUrl
 }) {
-  return /* @__PURE__ */ React.createElement(EmailLayout, { title: "Enrollment Confirmed", previewText: `${studentName} is now enrolled in ${className}.` }, /* @__PURE__ */ React.createElement("p", null, "Hi ", parentName, ","), /* @__PURE__ */ React.createElement("p", null, "Great news! ", /* @__PURE__ */ React.createElement("strong", null, studentName), " has been successfully enrolled in the following class:"), /* @__PURE__ */ React.createElement("ul", null, /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("strong", null, "Class:"), " ", className), classVariantName ? /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("strong", null, "Schedule:"), " ", classVariantName) : null, startDate ? /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("strong", null, "Start Date:"), " ", startDate) : null, tutorName ? /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("strong", null, "Tutor:"), " ", tutorName) : null), /* @__PURE__ */ React.createElement("p", null, "We look forward to seeing ", studentName, " in class. If you have any questions, feel free to reach out."), actionUrl ? /* @__PURE__ */ React.createElement("p", null, /* @__PURE__ */ React.createElement("a", { href: actionUrl, style: { color: "#4f46e5", fontWeight: 600 } }, "View class details")) : null);
+  return /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)(EmailLayout, { title: "Enrollment Confirmed", previewText: `${studentName} is now enrolled in ${className}.`, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("p", { children: [
+      "Hi ",
+      parentName,
+      ","
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("p", { children: [
+      "Great news! ",
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("strong", { children: studentName }),
+      " has been successfully enrolled in the following class:"
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("ul", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("li", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("strong", { children: "Class:" }),
+        " ",
+        className
+      ] }),
+      classVariantName ? /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("li", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("strong", { children: "Schedule:" }),
+        " ",
+        classVariantName
+      ] }) : null,
+      startDate ? /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("li", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("strong", { children: "Start Date:" }),
+        " ",
+        startDate
+      ] }) : null,
+      tutorName ? /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("li", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("strong", { children: "Tutor:" }),
+        " ",
+        tutorName
+      ] }) : null
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("p", { children: [
+      "We look forward to seeing ",
+      studentName,
+      " in class. If you have any questions, feel free to reach out."
+    ] }),
+    actionUrl ? /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("a", { href: actionUrl, style: { color: "#4f46e5", fontWeight: 600 }, children: "View class details" }) }) : null
+  ] });
 }
 
 // src/services/email/templates/password-changed.tsx
+var import_jsx_runtime11 = require("react/jsx-runtime");
 function PasswordChangedTemplate({ recipientName, changedAt, supportEmail }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(
     EmailLayout,
     {
       title: "Password Updated",
-      previewText: "This confirms your account password was changed."
-    },
-    /* @__PURE__ */ React.createElement("p", null, "Hi ", recipientName, ","),
-    /* @__PURE__ */ React.createElement("p", null, "Your account password was changed successfully on ", changedAt, "."),
-    /* @__PURE__ */ React.createElement("p", null, "If you made this change, no further action is needed."),
-    /* @__PURE__ */ React.createElement("p", null, "If you did not make this change, please reset your password immediately and contact support", supportEmail ? ` at ${supportEmail}` : "", ".")
+      previewText: "This confirms your account password was changed.",
+      children: [
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("p", { children: [
+          "Hi ",
+          recipientName,
+          ","
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("p", { children: [
+          "Your account password was changed successfully on ",
+          changedAt,
+          "."
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("p", { children: "If you made this change, no further action is needed." }),
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("p", { children: [
+          "If you did not make this change, please reset your password immediately and contact support",
+          supportEmail ? ` at ${supportEmail}` : "",
+          "."
+        ] })
+      ]
+    }
   );
 }
 
 // src/services/email/templates/password-reset.tsx
+var import_jsx_runtime12 = require("react/jsx-runtime");
 function PasswordResetTemplate({ recipientName, resetUrl, expiresInMinutes = 30 }) {
-  return /* @__PURE__ */ React.createElement(EmailLayout, { title: "Password Reset", previewText: "Reset your password securely." }, /* @__PURE__ */ React.createElement("p", null, "Hi ", recipientName, ","), /* @__PURE__ */ React.createElement("p", null, "We received a request to reset your password."), /* @__PURE__ */ React.createElement("p", null, "Reset link: ", /* @__PURE__ */ React.createElement("a", { href: resetUrl }, resetUrl)), /* @__PURE__ */ React.createElement("p", null, "This link expires in ", expiresInMinutes, " minutes."));
+  return /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)(EmailLayout, { title: "Password Reset", previewText: "Reset your password securely.", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("p", { children: [
+      "Hi ",
+      recipientName,
+      ","
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("p", { children: "We received a request to reset your password." }),
+    /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("p", { children: [
+      "Reset link: ",
+      /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("a", { href: resetUrl, children: resetUrl })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("p", { children: [
+      "This link expires in ",
+      expiresInMinutes,
+      " minutes."
+    ] })
+  ] });
 }
 
 // src/services/email/templates/payment-receipt.tsx
+var import_jsx_runtime13 = require("react/jsx-runtime");
 function PaymentReceiptTemplate({
   parentName,
   childName,
@@ -330,10 +654,43 @@ function PaymentReceiptTemplate({
   paidAt,
   receiptRef
 }) {
-  return /* @__PURE__ */ React.createElement(EmailLayout, { title: "Payment Receipt", previewText: "Your payment was successful." }, /* @__PURE__ */ React.createElement("p", null, "Hi ", parentName, ","), /* @__PURE__ */ React.createElement("p", null, "We\u2019ve received your payment successfully."), /* @__PURE__ */ React.createElement("ul", null, /* @__PURE__ */ React.createElement("li", null, "Student: ", childName), /* @__PURE__ */ React.createElement("li", null, "Class: ", className), /* @__PURE__ */ React.createElement("li", null, "Amount: ", amount, " ", currency), receiptRef ? /* @__PURE__ */ React.createElement("li", null, "Reference: ", receiptRef) : null, paidAt ? /* @__PURE__ */ React.createElement("li", null, "Paid At: ", paidAt) : null), /* @__PURE__ */ React.createElement("p", null, "Thank you for choosing Goddan."));
+  return /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)(EmailLayout, { title: "Payment Receipt", previewText: "Your payment was successful.", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("p", { children: [
+      "Hi ",
+      parentName,
+      ","
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("p", { children: "We\u2019ve received your payment successfully." }),
+    /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("ul", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("li", { children: [
+        "Student: ",
+        childName
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("li", { children: [
+        "Class: ",
+        className
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("li", { children: [
+        "Amount: ",
+        amount,
+        " ",
+        currency
+      ] }),
+      receiptRef ? /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("li", { children: [
+        "Reference: ",
+        receiptRef
+      ] }) : null,
+      paidAt ? /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("li", { children: [
+        "Paid At: ",
+        paidAt
+      ] }) : null
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("p", { children: "Thank you for choosing LLF." })
+  ] });
 }
 
 // src/services/email/templates/tutor-admin-update.tsx
+var import_jsx_runtime14 = require("react/jsx-runtime");
 function TutorAdminUpdateTemplate({
   tutorName,
   loginEmail,
@@ -343,23 +700,86 @@ function TutorAdminUpdateTemplate({
 }) {
   const title = action === "created" ? "Tutor Account Created" : action === "verification-updated" ? "Tutor Verification Updated" : "Tutor Profile Updated";
   const previewText = action === "created" ? "Your tutor account has been created by an admin." : action === "verification-updated" ? "Your verification status has been updated by an admin." : "Your tutor profile has been updated by an admin.";
-  return /* @__PURE__ */ React.createElement(EmailLayout, { title, previewText }, /* @__PURE__ */ React.createElement("p", null, "Hi ", tutorName, ","), /* @__PURE__ */ React.createElement("p", null, "An administrator just ", action === "created" ? "created" : "updated", " your tutor account."), /* @__PURE__ */ React.createElement("p", null, "Login email: ", /* @__PURE__ */ React.createElement("strong", null, loginEmail)), temporaryPassword ? /* @__PURE__ */ React.createElement("p", null, "Temporary password: ", /* @__PURE__ */ React.createElement("strong", null, temporaryPassword)) : null, changes.length > 0 ? /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("p", null, "Changes made:"), /* @__PURE__ */ React.createElement("ul", null, changes.map((change) => /* @__PURE__ */ React.createElement("li", { key: change }, change)))) : null, /* @__PURE__ */ React.createElement("p", null, "If you did not expect this update, please contact support immediately."));
+  return /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)(EmailLayout, { title, previewText, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)("p", { children: [
+      "Hi ",
+      tutorName,
+      ","
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)("p", { children: [
+      "An administrator just ",
+      action === "created" ? "created" : "updated",
+      " your tutor account."
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)("p", { children: [
+      "Login email: ",
+      /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("strong", { children: loginEmail })
+    ] }),
+    temporaryPassword ? /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)("p", { children: [
+      "Temporary password: ",
+      /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("strong", { children: temporaryPassword })
+    ] }) : null,
+    changes.length > 0 ? /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)(import_jsx_runtime14.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("p", { children: "Changes made:" }),
+      /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("ul", { children: changes.map((change) => /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("li", { children: change }, change)) })
+    ] }) : null,
+    /* @__PURE__ */ (0, import_jsx_runtime14.jsx)("p", { children: "If you did not expect this update, please contact support immediately." })
+  ] });
 }
 
 // src/services/email/templates/weekly-report.tsx
+var import_jsx_runtime15 = require("react/jsx-runtime");
 function WeeklyReportTemplate({ recipientName, weekLabel, summaryItems, actionUrl }) {
-  return /* @__PURE__ */ React.createElement(EmailLayout, { title: "Weekly Progress Report", previewText: "Your weekly report is ready." }, /* @__PURE__ */ React.createElement("p", null, "Hi ", recipientName, ","), /* @__PURE__ */ React.createElement("p", null, "Here is your summary for ", weekLabel, ":"), /* @__PURE__ */ React.createElement("ul", null, summaryItems.map((item) => /* @__PURE__ */ React.createElement("li", { key: item }, item))), actionUrl ? /* @__PURE__ */ React.createElement("p", null, "View details: ", /* @__PURE__ */ React.createElement("a", { href: actionUrl }, actionUrl)) : null);
+  return /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)(EmailLayout, { title: "Weekly Progress Report", previewText: "Your weekly report is ready.", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("p", { children: [
+      "Hi ",
+      recipientName,
+      ","
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("p", { children: [
+      "Here is your summary for ",
+      weekLabel,
+      ":"
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("ul", { children: summaryItems.map((item) => /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("li", { children: item }, item)) }),
+    actionUrl ? /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)("p", { children: [
+      "View details: ",
+      /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("a", { href: actionUrl, children: actionUrl })
+    ] }) : null
+  ] });
 }
 
 // src/services/email/templates/welcome.tsx
-function WelcomeTemplate({ name, role = "parent", dashboardUrl }) {
-  return /* @__PURE__ */ React.createElement(EmailLayout, { title: "Welcome to Goddan", previewText: "Your account has been created successfully." }, /* @__PURE__ */ React.createElement("p", null, "Hi ", name, ","), /* @__PURE__ */ React.createElement("p", null, "Welcome to Goddan. Your ", role, " account is now active."), dashboardUrl ? /* @__PURE__ */ React.createElement("p", null, "Get started here: ", /* @__PURE__ */ React.createElement("a", { href: dashboardUrl }, dashboardUrl)) : null, /* @__PURE__ */ React.createElement("p", null, "We\u2019re glad to have you onboard."));
+var import_jsx_runtime16 = require("react/jsx-runtime");
+function WelcomeTemplate({ name, role = "membership", dashboardUrl }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(EmailLayout, { title: "Welcome to LLF", previewText: "Your account has been created successfully.", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("p", { children: [
+      "Hi ",
+      name,
+      ","
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("p", { children: [
+      "Welcome to LLF. Your ",
+      role,
+      " account is now active."
+    ] }),
+    dashboardUrl ? /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("p", { children: [
+      "Get started here: ",
+      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("a", { href: dashboardUrl, children: dashboardUrl })
+    ] }) : null,
+    /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { children: "We\u2019re glad to have you onboard." })
+  ] });
 }
 
 // src/services/email/registry/template.registry.ts
 var templateRegistry = {
   welcome: {
-    subject: () => "Welcome to Goddan",
+    subject: () => "Welcome to LLF",
+    previewText: () => "Your account is ready.",
+    component: (data) => WelcomeTemplate(data)
+  },
+  "member-registration": {
+    subject: () => "Welcome to LLF",
     previewText: () => "Your account is ready.",
     component: (data) => WelcomeTemplate(data)
   },
@@ -484,6 +904,14 @@ var serverSchema = z2.object({
   QUEUE_NAME: z2.string().trim().default("llf-tasks"),
   QUEUE_WORKER_CONCURRENCY: z2.coerce.number().int().min(1).default(5),
   QUEUE_LOG_SINK: z2.enum(["database", "mixpanel", "both", "none"]).default("both"),
+  EMAIL_FROM_NAME: z2.string().trim().min(1),
+  EMAIL_FROM_EMAIL: z2.email().trim().min(1),
+  EMAIL_PROVIDER: z2.enum(["smtp", "zeptomail", "mock"]).default("smtp"),
+  SMTP_HOST: z2.string().trim().min(1),
+  SMTP_PORT: z2.coerce.number().int().min(1).default(465),
+  SMTP_USERNAME: z2.string().trim().min(1),
+  SMTP_PASSWORD: z2.string().trim().min(1),
+  SMTP_SECURE: z2.coerce.boolean().default(true),
   VERCEL_TOKEN: z2.string().trim().optional(),
   VERCEL_ORG_ID: z2.string().trim().optional(),
   VERCEL_PROJECT_ID: z2.string().trim().optional(),
@@ -565,11 +993,11 @@ var ZeptoMailProvider = class {
     const payload = {
       from: {
         address: input.fromEmail,
-        name: input.fromName || env.EMAIL_FROM_NAME || "Goddan"
+        name: input.fromName || env.EMAIL_FROM_NAME || "LLF"
       },
       to: [{ email_address: { address: input.to } }],
-      cc: (input.cc || []).map((email) => ({ email_address: { address: email } })),
-      bcc: (input.bcc || []).map((email) => ({ email_address: { address: email } })),
+      cc: (input.cc || []).map((email2) => ({ email_address: { address: email2 } })),
+      bcc: (input.bcc || []).map((email2) => ({ email_address: { address: email2 } })),
       subject: input.subject,
       htmlbody: input.html,
       textbody: input.text
@@ -627,6 +1055,7 @@ var EmailService = class {
       html: rendered.html,
       text: rendered.text
     });
+    console.log("Email sent:", save);
     return save;
   }
 };
