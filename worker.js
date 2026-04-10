@@ -23,6 +23,7 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 ));
 
 // src/workers/worker.ts
+var import_express = __toESM(require("express"));
 var import_bullmq = require("bullmq");
 
 // src/services/queue/config.ts
@@ -939,4 +940,12 @@ process.on("SIGINT", () => {
 });
 process.on("SIGTERM", () => {
   void shutdown("SIGTERM");
+});
+var app = (0, import_express.default)();
+var port = process.env.PORT || 4e3;
+app.get("/", (_, res) => {
+  res.send("Hello World!");
+});
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
 });
