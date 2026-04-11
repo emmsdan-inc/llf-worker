@@ -916,6 +916,7 @@ var serverSchema = z2.object({
   VERCEL_ORG_ID: z2.string().trim().optional(),
   VERCEL_PROJECT_ID: z2.string().trim().optional(),
   ZEPTO_API_KEY: z2.string().trim().optional(),
+  ZEPTO_BASE_URL: z2.string().trim().url().optional(),
   MIXPANEL_TOKEN: z2.string().trim().optional()
 });
 var isServer = typeof window === "undefined";
@@ -1057,6 +1058,9 @@ var EmailService = class {
     });
     console.log("Email sent:", save);
     return save;
+  }
+  async sendNow(input) {
+    return this.send(input);
   }
 };
 var emailService = new EmailService();
