@@ -893,7 +893,13 @@ async function renderEmail(template, data) {
 // src/env.ts
 var import_config = require("dotenv/config");
 var z2 = __toESM(require("zod"));
+var clientSchema = {
+  NEXT_PUBLIC_ANALYTICS_ID: z2.string().trim().optional(),
+  NEXT_PUBLIC_SENTRY_DSN: z2.string().trim().optional(),
+  NEXT_PUBLIC_ENVIRONMENT: z2.string().trim().optional()
+};
 var serverSchema = z2.object({
+  ...clientSchema,
   NODE_ENV: z2.enum(["development", "production", "test"]).default("development"),
   NEXT_RUNTIME: z2.enum(["edge", "nodejs", "experimental-edge"]).optional(),
   DATABASE_URL: z2.string().trim().min(1),
@@ -920,6 +926,7 @@ var serverSchema = z2.object({
   MIXPANEL_TOKEN: z2.string().trim().optional()
 });
 var isServer = typeof window === "undefined";
+var clientEnv = z2.object(clientSchema).parse(process.env);
 var env = isServer ? serverSchema.parse(process.env) : {};
 
 // src/services/email/providers/mock.provider.ts
