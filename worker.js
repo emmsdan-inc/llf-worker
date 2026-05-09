@@ -892,14 +892,15 @@ async function renderEmail(template, data) {
 
 // src/env.ts
 var import_config = require("dotenv/config");
+var import_env_nextjs = require("@t3-oss/env-nextjs");
 var z2 = __toESM(require("zod"));
 var clientSchema = {
   NEXT_PUBLIC_ANALYTICS_ID: z2.string().trim().optional(),
   NEXT_PUBLIC_SENTRY_DSN: z2.string().trim().optional(),
-  NEXT_PUBLIC_ENVIRONMENT: z2.string().trim().optional()
+  NEXT_PUBLIC_ENVIRONMENT: z2.string().trim().optional(),
+  NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY: z2.string().trim()
 };
-var serverSchema = z2.object({
-  ...clientSchema,
+var serverSchema = {
   NODE_ENV: z2.enum(["development", "production", "test"]).default("development"),
   NEXT_RUNTIME: z2.enum(["edge", "nodejs", "experimental-edge"]).optional(),
   DATABASE_URL: z2.string().trim().min(1),
@@ -922,12 +923,19 @@ var serverSchema = z2.object({
   VERCEL_ORG_ID: z2.string().trim().optional(),
   VERCEL_PROJECT_ID: z2.string().trim().optional(),
   ZEPTO_API_KEY: z2.string().trim().optional(),
-  ZEPTO_BASE_URL: z2.string().trim().url().optional(),
-  MIXPANEL_TOKEN: z2.string().trim().optional()
+  ZEPTO_BASE_URL: z2.string().trim().url().optional()
+};
+console.log("Validating environment variables...");
+var client = z2.object(clientSchema);
+var env = (0, import_env_nextjs.createEnv)({
+  server: serverSchema,
+  client: clientSchema,
+  runtimeEnv: {
+    ...process.env,
+    NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY,
+    NEXT_PUBLIC_MIXPANEL_TOKEN: process.env.NEXT_PUBLIC_MIXPANEL_TOKEN
+  }
 });
-var isServer = typeof window === "undefined";
-var clientEnv = z2.object(clientSchema).parse(process.env);
-var env = isServer ? serverSchema.parse(process.env) : {};
 
 // src/services/email/providers/mock.provider.ts
 var MockMailProvider = class {
