@@ -85,7 +85,7 @@
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
     "dotenv": "latest",
-    "esbuild": "^0.25.10",
+    "esbuild": "^0.28.1",
     "prisma": "latest",
     "tailwindcss": "^4",
     "tsx": "4.20.0",
